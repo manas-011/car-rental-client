@@ -70,7 +70,7 @@ function App() {
           <Route
            path='/addcar'
             element={
-              ( Admin_id ) ? (
+              ( Admin_id === _id ) ? (
                 <AddCar />
               ) : (
                 <Navigate to="/"  />
@@ -81,7 +81,7 @@ function App() {
           <Route
            path='/admin'
             element={
-               ( Admin_id ) ? (
+               ( Admin_id === _id ) ? (
                 <AdminHome />
               ) : (
                 <Navigate to="/"  />
@@ -92,7 +92,7 @@ function App() {
           <Route
            path='/editcar/:carid'
             element={
-              ( Admin_id ) ? (
+              ( Admin_id === _id) ? (
                 <EditCar />
               ) : (
                 <Navigate to="/"  />
