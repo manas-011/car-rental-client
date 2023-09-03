@@ -1,12 +1,14 @@
 import axios from "axios";
 import {message} from 'antd'
 
+const API_URL = 'https://car-rental-server-orpin.vercel.app/' ;
+
 export const userLogin = (reqObj) => async dispatch => {
     
     dispatch({type: 'LOADING' , payload:true})
 
     try {
-        const response = await axios.post('/api/users/login' , reqObj)
+        const response = await axios.post('https://car-rental-server-orpin.vercel.app/api/users/login' , reqObj)
         localStorage.setItem('user' , JSON.stringify(response.data))
 
         message.success('Login success')
@@ -28,7 +30,7 @@ export const userRegister=(reqObj)=>async dispatch=>{
     dispatch({type: 'LOADING' , payload:true})
 
     try {
-        const response = await axios.post('/api/users/register' , reqObj) ;
+        const response = await axios.post('https://car-rental-server-orpin.vercel.app/api/users/register' , reqObj) ;
 
         setTimeout(() => {
             window.location.href='/login'
